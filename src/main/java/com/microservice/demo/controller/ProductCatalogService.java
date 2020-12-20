@@ -1,6 +1,6 @@
 package com.microservice.demo.controller;
 
-import com.microservice.demo.dto.Product;
+import com.microservice.demo.dto.ProductDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -10,26 +10,26 @@ import java.util.Map;
 
 @RestController
 public class ProductCatalogService {
-    private static Map<String, Product> productCatalog = new HashMap<>();
+    private static Map<String, ProductDTO> productCatalog = new HashMap<>();
 
     @PostMapping("/product")
-    public String addProduct(@RequestBody Product product) {
+    public String addProduct(@RequestBody ProductDTO product) {
         productCatalog.put(product.getId(), product);
         return "product added successfully";
     }
 
     @GetMapping("/product/{id}")
-    public Product getProductDetails(@PathVariable String id) {
+    public ProductDTO getProductDetails(@PathVariable String id) {
         return productCatalog.get(id);
     }
 
     @GetMapping("/product")
-    public List<Product> getProductList() {
-        return new ArrayList<Product>(productCatalog.values());
+    public List<ProductDTO> getProductList() {
+        return new ArrayList<ProductDTO>(productCatalog.values());
     }
 
     @PutMapping("/product")
-    public String updateProduct(@RequestBody Product product) {
+    public String updateProduct(@RequestBody ProductDTO product) {
         productCatalog.put(product.getId(), product);
         return "product updated successfully";
     }
