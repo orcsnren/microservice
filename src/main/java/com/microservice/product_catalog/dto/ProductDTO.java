@@ -1,14 +1,12 @@
-package com.microservice.demo.dto;
+package com.microservice.product_catalog.dto;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Data
 @Getter
 @Setter
-@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ProductDTO {
     private String id;
     private String title;

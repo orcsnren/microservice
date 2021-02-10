@@ -1,6 +1,6 @@
-package com.microservice.demo.controller;
+package com.microservice.product_catalog.controller;
 
-import com.microservice.demo.dto.ProductDTO;
+import com.microservice.product_catalog.dto.ProductDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-public class ProductCatalogService {
+public class ProductCatalogController {
     private static Map<String, ProductDTO> productCatalog = new HashMap<>();
 
     @PostMapping("/product")
